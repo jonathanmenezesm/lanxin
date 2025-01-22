@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rancho&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de cores */
+:root {
+    --corbody: #ffeec78a;
+    --cor0: #EFE1CA;
+    --cor1: #FFE4A6;
+    --cor2: #EB9843;
+    --cor3: #B06927;
+    --cor4: #532B07;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffeec78a;
+}
+
+div {
+    display: flex;
+
+    #croissant {
+        width: 30px;
+        height: 30px;
+        margin-right: 3px;
+    }
+    h1 {
+        color: var(--cor4);
+        margin-bottom: 20px;
+        font-family: Rancho, oswald, roboto;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+    background-color: var(--cor0);
+    border-radius: 10px;
+}
+
+#box_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    gap: 5px;
+}
+
+#box_login label {
+    align-self: flex-start;
+    /* Alinha os labels à esquerda */
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--cor4);
+}
+
+#box_login input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor3);
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--cor4);
+}
+
+#box_login button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+#box_login .entrar {
+    margin-top: 15px;
+    background-color: var(--cor4);
+    color: white;
+}
+
+#box_login .entrar:hover {
+    margin-top: 15px;
+    background-color: var(--cor3);
+    color: white;
+}
+
+#box_login .esqueceu_senha {
+    background-color: transparent;
+    color: var(--cor4);
+    text-align: center;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFE4A6(--cor0);
+    text-align: center;
+    padding: 10px 0;
+    color: #532B07;
+    font-size: 14px;
+}
