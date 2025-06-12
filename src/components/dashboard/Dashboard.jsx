@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../styles/Dashboard.module.scss'; // Certifique-se de criar este arquivo de estilos
+import styles from '../../styles/Dashboard.module.scss';
 
 function Dashboard() {
     const navigate = useNavigate();
+    const [nomeUsuario, setNomeUsuario] = useState('');
+
+    useEffect(() => {
+        // Recupera o nome do usuário salvo no localStorage após o login
+        const nome = localStorage.getItem('nomeUsuario');
+        setNomeUsuario(nome || '');
+    }, []);
 
     const IrParaPerfil = () => {
-        navigate('/perfil'); // Ajuste a rota conforme necessário
+        navigate('/perfil');
     };
 
     const IrParaFinanceiro = () => {
-        navigate('/financeiro'); // Ajuste a rota conforme necessário
+        navigate('/financeiro');
     };
 
     const IrParaHistorico = () => {
-        navigate('/historico'); // Ajuste a rota conforme necessário
+        navigate('/historico');
     };
 
     const Sair = () => {
-        navigate('/'); // Redireciona para a página inicial (login)
+        // Limpa o nome do usuário ao sair (opcional)
+        localStorage.removeItem('nomeUsuario');
+        navigate('/');
     };
 
     return (
@@ -31,7 +40,7 @@ function Dashboard() {
             </header>
 
             <section className={styles.boasVindas}>
-                <p>Olá, <strong>{'{usuário}'}</strong>.</p>
+                <p>Olá, <strong>{nomeUsuario}</strong>.</p>
                 <p>Seja bem-vindo!</p>
             </section>
 

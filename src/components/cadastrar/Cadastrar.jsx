@@ -21,14 +21,14 @@ function Cadastrar() {
             <section className={styles.formulario}>
                 <h2>Preencha os campos abaixo:</h2>
                 <form>
-                    <input type="text" placeholder="Digite seu nome" />
-                    <input type="text" placeholder="Digite seu sobrenome" />
-                    <input type="date" placeholder="Digite sua data de nascimento (DD/MM/AAAA)" />
-                    <input type="text" placeholder="Digite seu CPF (somente números)" />
-                    <input type="text" placeholder="Digite seu celular com DDD Ex.: 21911223344" />
-                    <input type="email" placeholder="Digite seu email" />
-                    <input type="password" placeholder="Digite sua senha" />
-                    <input type="password" placeholder="Confirme a senha digitada" />
+                    <input id="nome" type="text" placeholder="Digite seu nome" />
+                    <input id="sobrenome" type="text" placeholder="Digite seu sobrenome" />
+                    <input id="data_nascimento" type="date" placeholder="Digite sua data de nascimento (DD/MM/AAAA)" />
+                    <input id="cpf" type="text" placeholder="Digite seu CPF (somente números)" />
+                    <input id="celular" type="text" placeholder="Digite seu celular com DDD Ex.: 21911223344" />
+                    <input id="email" type="email" placeholder="Digite seu email" />
+                    <input id="senha" type="password" placeholder="Digite sua senha" />
+                    <input id="confirmar-senha" type="password" placeholder="Confirme a senha digitada" /> {/*validação somente no frontend*/}
                     <button type="submit" className={styles.botaoCadastrar}>Cadastrar</button>
                 </form>
                 <button className={styles.botaoVoltar} onClick={VoltarParaLogin}>
