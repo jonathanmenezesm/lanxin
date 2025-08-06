@@ -5,6 +5,7 @@ import styles from '../../styles/Dashboard.module.scss';
 function Dashboard() {
     const navigate = useNavigate();
     const [nomeUsuario, setNomeUsuario] = useState('');
+    const [showModal, setShowModal] = useState(false); // Estado para controlar o modal
 
     useEffect(() => {
         // Recupera o nome do usuário salvo no localStorage após o login
@@ -33,7 +34,8 @@ function Dashboard() {
     return (
         <main className={styles.mainDashboard}>
             <header className={styles.header}>
-                <button onClick={Sair} className={styles.botaoSair}>
+                {/* Ao clicar, abre o modal de confirmação */}
+                <button onClick={() => setShowModal(true)} className={styles.botaoSair}>
                     sair
                 </button>
                 <h1>Lanxin</h1>
@@ -55,6 +57,19 @@ function Dashboard() {
                     Histórico
                 </button>
             </section>
+
+            {/* Modal de confirmação de saída */}
+            {showModal && (
+                <div className={styles.modal}>
+                    <div className={styles.modalContent}>
+                        <b>Tem certeza que deseja sair?</b>
+                        <div className={styles.ModalButtons}>
+                            <button className={styles.botaoSim} onClick={Sair}>Sim</button>
+                            <button className={styles.botaoCancelar} onClick={() => setShowModal(false)}>Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
