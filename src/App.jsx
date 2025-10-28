@@ -4,9 +4,10 @@ import Dashboard from "./components/dashboard/Dashboard.jsx";
 import Cadastrar from "./components/cadastrar/Cadastrar.jsx";
 import RecuperarSenha from './components/recuperar_senha/RecuperarSenha.jsx';
 import "./global.scss";
-import Perfil from './components/perfil/Perfil.jsx';
-import Financeiro from './components/financeiro/Financeiro.jsx';
-import Historico from './components/historico/Historico.jsx';
+import Perfil from './components/perfil/perfil.jsx';
+import Financeiro from './components/financeiro/financeiro.jsx';
+import Historico from './components/historico/historico.jsx';
+import Construction from './components/construction/Construction.jsx';
 
 
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/financeiro" element={<Financeiro />} />
                 <Route path="/historico" element={<Historico />} />
+                <Route path="/construction" element={<Construction />} />
             </Routes>
         </BrowserRouter>
 	);
