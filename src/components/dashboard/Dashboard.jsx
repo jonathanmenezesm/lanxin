@@ -5,12 +5,15 @@ import styles from '../../styles/Dashboard.module.scss';
 function Dashboard() {
     const navigate = useNavigate();
     const [nomeUsuario, setNomeUsuario] = useState('');
+    const [roleUsuario, setRoleUsuario] = useState('');
     const [showModal, setShowModal] = useState(false); // Estado para controlar o modal
 
     useEffect(() => {
         // Recupera o nome do usuário salvo no localStorage após o login
         const nome = localStorage.getItem('nomeUsuario');
+        const role = localStorage.getItem('roleUsuario');
         setNomeUsuario(nome || '');
+        setRoleUsuario(role || '');
     }, []);
 
     const IrParaPerfil = () => {
@@ -25,9 +28,15 @@ function Dashboard() {
         navigate('/historico');
     };
 
+    const IrParaCadastrarVendas = () => {
+        navigate('/cadastrar-vendas'); // Supondo que haja uma rota para isso
+    };
+
     const Sair = () => {
         // Limpa o nome do usuário ao sair (opcional)
         localStorage.removeItem('nomeUsuario');
+        localStorage.removeItem('idUsuario');
+        localStorage.removeItem('roleUsuario');
         navigate('/');
     };
 
@@ -56,6 +65,11 @@ function Dashboard() {
                 <button className={styles.card} onClick={IrParaHistorico}>
                     Histórico
                 </button>
+                {roleUsuario === 'admin' && (
+                    <button className={styles.card} onClick={IrParaCadastrarVendas}>
+                        Cadastrar Vendas
+                    </button>
+                )}
             </section>
 
             {/* Modal de confirmação de saída */}

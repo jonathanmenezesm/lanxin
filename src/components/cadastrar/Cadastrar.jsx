@@ -34,11 +34,14 @@ function Cadastrar() {
             return;
         }
 
+        // Formatar a data para DD-MM-AAAA
+        const dataFormatada = form.data_nascimento ? new Date(form.data_nascimento).toLocaleDateString('pt-BR').replace(/\//g, '-') : '';
+
         try {
             await Api.post('/usuarios/cadastrar', {
                 nome: form.nome,
                 sobrenome: form.sobrenome,
-                data_nascimento: form.data_nascimento,
+                data_nascimento: dataFormatada,
                 cpf: form.cpf,
                 celular: form.celular,
                 email: form.email,
@@ -47,7 +50,9 @@ function Cadastrar() {
             alert('Cadastro realizado com sucesso!');
             navigate('/');
         } catch (error) {
-            alert('Erro ao cadastrar. Verifique os dados e tente novamente.');
+            console.error('Erro no cadastro:', error);
+            const errorMessage = error.response?.data?.Erro || 'Erro desconhecido ao cadastrar.';
+            alert(`Erro ao cadastrar: ${errorMessage}`);
         }
     };
 

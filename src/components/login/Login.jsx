@@ -32,6 +32,8 @@ function Login() {
 
             // Salva o nome retornado pela API
             localStorage.setItem('nomeUsuario', resposta.data.nome);
+            localStorage.setItem('idUsuario', resposta.data.id);
+            localStorage.setItem('roleUsuario', resposta.data.role);
 
             alert("Login realizado com sucesso!");
             IrParaDashboard();
