@@ -1,4 +1,4 @@
-import Construction from '../construction/construction';
+import Construction from '../construction/Construction.jsx';
 
 const Financeiro = () => {
     return <Construction />;

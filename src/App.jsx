@@ -6,8 +6,8 @@ import CadastrarVendas from "./components/cadastrar/CadastrarVendas.jsx";
 import RecuperarSenha from './components/recuperar_senha/RecuperarSenha.jsx';
 import "./global.scss";
 import Perfil from './components/perfil/Perfil.jsx';
-import Financeiro from './components/financeiro/financeiro.jsx';
-import Historico from './components/historico/historico.jsx';
+import Financeiro from './components/financeiro/Financeiro.jsx';
+import Historico from './components/historico/Historico.jsx';
 import Construction from './components/construction/Construction.jsx';
 
 
